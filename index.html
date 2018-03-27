@@ -109,18 +109,16 @@ Highcharts.stockChart('container', {
             //var x = (new Date()).getTime();
             request("https://api.myjson.com/bins/177c9p", mycallback);
           
-              for (i = 0; i < 50; i++)
+              for (i = 0; i < 150; i++)
               {    
-                if(i == 49)
+                if(i == 149)
                 {
                   if(this.switch_value === 0)
                   {
-                    console.log("Test-0Final:" + i);
                     series.addPoint([x++, 0], true, true);
                   }
                   else
                   {
-                    console.log("Test-Final:"+ i);
                     series.addPoint([x++, testdata[index + i]], true, true);
                   }
                 } 
@@ -128,17 +126,15 @@ Highcharts.stockChart('container', {
                 {
                   if(this.switch_value === 0)
                   {
-                    console.log("Test0:"+ i);
                     series.addPoint([x++, 0], false, true);
                   }
                   else
                   {
-                    console.log("Test:");
                     series.addPoint([x++, testdata[index + i]], false, true);
                   }
                 }   
             }
-            index = index + 50;
+            index = index + 150;
             if(index > testdata.length) {
                   index = 0;
             }
@@ -153,7 +149,10 @@ Highcharts.stockChart('container', {
   },
   xAxis:{
         max: 250 *6,
-        min: 0
+        min: 0,
+        labels: {
+            enabled: false
+        }
   },
   navigator: {
       enabled: false,
