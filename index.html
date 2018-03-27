@@ -10,7 +10,7 @@
     
   </style>
 
-  <title>Highcharts Demo</title>
+  <title>ECG Demo</title>
 </head>
 
 <body>
@@ -47,7 +47,12 @@
         var obj = $.parseJSON(data);
         this.switch_value = obj['status'];
         //document.getElementById("demo2").innerHTML = this.switch_value;
-        document.getElementById("demo3").innerHTML = Math.floor(Math.random() * 5) + 80;
+        if(switch_value === 1){
+          document.getElementById("demo3").innerHTML = Math.floor(Math.random() * 5) + 80;
+        }
+        else{
+          document.getElementById("demo3").innerHTML = 0;
+        }
         
   }
   var switch_value = 0;
